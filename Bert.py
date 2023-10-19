@@ -6,16 +6,19 @@ from transformers import BertTokenizer
 
 
 tokenizer = BertTokenizer.from_pretrained('bert-base-uncased', do_lower_case = True)
-labels = {'business':0,
-          'entertainment':1,
-          'sport':2,
-          'tech':3,
-          'politics':4
+labels = {'Still':1,
+          'Walking':2,
+          'Run':3,
+          'Bike':4,
+          'Car':5,
+          'Bus':6,
+          'Train':7,
+          'Subway':8
           }
 
 class Dataset(torch.utils.data.Dataset):
     def __init__(self, df):
-        # self.labels = [labels[label] for label in df['category']]
+        self.labels = [labels[label] for label in df['category']]
         self.texts = [tokenizer(text, 
                                 padding='max_length', 
                                 max_length = 256, 
