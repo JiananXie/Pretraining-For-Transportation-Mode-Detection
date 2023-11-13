@@ -2,11 +2,11 @@ import torch
 import pandas as pd
 import numpy as np
 from torch import nn
-from torch.optim import Adam, AdamW
+from torch.optim import Adam
 from torch.utils.data import DataLoader, RandomSampler, SequentialSampler
 from transformers import get_linear_schedule_with_warmup
 from tqdm import tqdm
-from Bert import Dataset, BertClassifier
+from Bert import Dataset, BertClassifier_npre
 
 def training(model, train_data, val_data, learning_rate, epochs):
     train, val = Dataset(train_data), Dataset(val_data)
@@ -106,10 +106,9 @@ if __name__ == '__main__':
     data_train = pd.read_csv('train.csv')
     data_valid = pd.read_csv('valid.csv')
     data_test = pd.read_csv('test.csv')
-
-    model = BertClassifier()
+   
+    model = BertClassifier_npre()
     lr = 0.000001 
-    epochs = 120
+    epochs = 130
     training(model, data_train, data_valid, lr, epochs)
     evaluate(model, data_test)
-    

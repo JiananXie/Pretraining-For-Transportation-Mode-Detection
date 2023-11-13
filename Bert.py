@@ -58,7 +58,7 @@ class BertClassifier(nn.Module):
 class BertClassifier_npre(nn.Module):
     def __init__(self, dropout=0.5):
         super(BertClassifier_npre, self).__init__()
-        self.bert = BertModel.from_pretrained('bert-base-uncased', pretrained = False)
+        self.bert = BertModel._from_config(config=BertConfig('bert-base-uncased'))
         self.dropout = nn.Dropout(dropout)
         self.linear = nn.Linear(768, 8)
         self.relu = nn.ReLU()

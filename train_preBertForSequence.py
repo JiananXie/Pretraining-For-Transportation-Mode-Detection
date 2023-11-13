@@ -6,7 +6,7 @@ from torch.optim import Adam
 from torch.utils.data import DataLoader, RandomSampler, SequentialSampler
 from transformers import get_linear_schedule_with_warmup, BertForSequenceClassification
 from tqdm import tqdm
-from Bert import Dataset
+from Bert import Dataset, BertConfig
 from sklearn.preprocessing import MinMaxScaler
 
 def training(model, train_data, val_data,learning_rate, epochs):
@@ -16,8 +16,10 @@ def training(model, train_data, val_data,learning_rate, epochs):
     train_dataloader = DataLoader(train, batch_size=2,sampler=RandomSampler(train))
     val_dataloader = DataLoader(val,batch_size=2, sampler=SequentialSampler(val))
     #判断是否使用GPU
-    use_cuda = torch.cuda.is_available()
-    device = torch.device('cuda' if use_cuda else 'cpu')
+    # use_cuda = torch.cuda.is_available()
+    use_cuda = False
+    # device = torch.device('cuda' if use_cuda else 'cpu')
+    device = torch.device('cpu')
     #定义损失函数和优化器
     criterion = nn.CrossEntropyLoss()
     optimizer = Adam(model.parameters(), lr= learning_rate)
@@ -40,11 +42,13 @@ def training(model, train_data, val_data,learning_rate, epochs):
         total_loss_train = 0 #记录训练集的损失
         #进度条函数
         for train_input, train_label in tqdm(train_dataloader):
-            train_input = train_input.to(device)
+            mask = train_input['attention_mask'].to(device)
+            input_id = train_input['input_ids'].squeeze(1).to(device)
             train_label = train_label.type(torch.LongTensor).to(device)
         #输出
-            output = model(**train_input, labels= train_label)
-
+            print(mask,input_id,train_label)
+            output = model(input_id,mask, labels= train_label)
+            print(output)
             y_pred_prob = output[1]
             y_pred_label = y_pred_prob.argmax(dim=1)
         #计算损失
@@ -63,11 +67,12 @@ def training(model, train_data, val_data,learning_rate, epochs):
         total_loss_val = 0#记录验证集的损失
         with torch.no_grad():
             for val_input, val_label in val_dataloader:
-                val_input = val_input.to(device)
+                mask = val_input['attention_mask'].to(device)
+                input_id = val_input['input_ids'].squeeze(1).to(device)
                 val_label = val_label.type(torch.LongTensor).to(device)
 
 
-                output = model(**val_input, labels= val_label)
+                output = model(input_id,mask, labels= val_label)
 
                 y_pred_prob = output[1]
                 y_pred_label = y_pred_prob.argmax(dim=1)
@@ -115,7 +120,7 @@ if __name__ == '__main__':
     data_train = pd.concat(Classification_train, axis=0, join='outer', ignore_index=True)
     data_valid = pd.concat(Classification_valid, axis=0, join='outer', ignore_index=True)
 
-    model = BertForSequenceClassification.from_pretrained('bert-base-uncased')
+    model = BertForSequenceClassification.from_pretrained('bert-base-uncased',config=BertConfig.from_pretrained('bert-base-uncased',num_labels=8))
     lr = 0.00001 
     epochs = 10
     training(model, data_train, data_valid, lr, epochs)
