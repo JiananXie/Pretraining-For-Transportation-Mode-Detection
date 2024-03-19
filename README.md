@@ -15,3 +15,4 @@ created for usage of project
 接下来每天更新工作以记录进度：(from 2024.3.16)
   - 2024.3.16 读文章：PromptCast: A New Prompt-based Learning Paradigm for Time Series Forecasting， Leveraging Language Foundation Models for Human Mobility Forecasting； 项目：复现Dabiri et al.(2019)工作
   - 2024.3.17 复现Dabiri et al.(2019)， 问题：数据预处理出错
+  - 2024.3.18 数据处理问题解决(作者提供代码有误，在issues可以找到解决方法)，成功跑通
