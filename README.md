@@ -17,3 +17,4 @@ created for usage of project
   - 2024.3.17 复现Dabiri et al.(2019)， 问题：数据预处理出错
   - 2024.3.18 数据处理问题解决(作者提供代码有误，在issues可以找到解决方法)，成功跑通论文中SECA和supervised CNN方法
   - 2024.3.19 成功跑通Dabiri et al.(2019)的baseline，准备着手复现`Leveraging the Self-Transition Probability of Ordinal Patterns Transition Network for Transportation Mode Identification Based on GPS Data`(2020)，同时研究Foursquare数据集
+  - 2024.3.20 复现OP-TMI，研究论文，以及寻找新GPS数据集
