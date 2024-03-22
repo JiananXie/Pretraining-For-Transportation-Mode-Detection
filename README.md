@@ -19,3 +19,4 @@ created for usage of project
   - 2024.3.19 成功跑通Dabiri et al.(2019)的baseline，准备着手复现`Leveraging the Self-Transition Probability of Ordinal Patterns Transition Network for Transportation Mode Identification Based on GPS Data`(2020)，同时研究Foursquare数据集
   - 2024.3.20 复现OP-TMI，研究论文，以及寻找新GPS数据集
   - 2024.3.21 复现OP-TMI，研究论文，以及寻找新GPS数据集
+  - 2024.3.22 复现OP-TMI，读文章：Trajectory as a Sequence-A novel travel mode identification framework
