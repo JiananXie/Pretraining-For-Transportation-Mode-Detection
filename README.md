@@ -20,4 +20,4 @@ created for usage of project
   - 2024.3.20 复现OP-TMI，研究论文，以及寻找新GPS数据集
   - 2024.3.21 复现OP-TMI，研究论文，以及寻找新GPS数据集
   - 2024.3.22 复现OP-TMI，读文章：`Trajectory as a Sequence-A novel travel mode identification framework`
-  - 2024.3.24 跑通OP-TMI但需要修改mode，重新运行中。尝试H3编码，因为大部分gird\_num的设置具有局限性，在跨度较大时无法合理的设置格子大小，但问题在于对于geolife而言处理后的h3编码有32000+，大于可以添加的词汇表数量。尝试方向：1.限制所有实验中geolife数据集在北京内，2.引入speed，acceleration，jerk等信息，在传入bert前先进行卷积编码
+  - 2024.3.24 跑通OP-TMI但需要修改mode，重新运行中。尝试H3编码，因为大部分gird\_num的设置具有局限性，在跨度较大时无法合理的设置格子大小，但问题在于对于geolife而言处理后的h3编码有32000+，大于可以添加的词汇表数量。尝试方向：1.限制所有实验中geolife数据集在北京内，2.引入speed，acceleration，jerk等信息，在传入bert前先进行卷积编码。对处理后数据集进行了简单可视化，发现有很多新疆等地收集的数据，也许我们得尝试第二种方式。
