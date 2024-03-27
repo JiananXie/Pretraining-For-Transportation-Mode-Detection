@@ -32,3 +32,4 @@ Weak Supervision(2023)`, `An Ensemble of ConvTransformer Networks for the Sussex
     - **5.是否可以利用半监督？如果仅聚焦于trm encoder比CAE/CE学习表征的能力更强，从而利用大量的未标记数据**
     - **6.输入只利用格网编号？H3？还是Cov-transformer？还是只利用speed？**
   - 2024.3.27 读文章：`A novel one-stage approach for pointwise transportation mode identification inspired by point cloud processing(2023)`，成功跑通`Dabiri et al.(2019)`的所有方法，回答：为什么一般工作都采用motion features，而不是直接用gps数据？**08年geolife作者只讲了对于raw gps data，利用机器学习方法去做检测，而第一步的feature extraction我们采用了.....等特征，并没有阐述清楚为什么不直接用gps数据**
+    -  **再寻找相关领域是否有直接利用gps数据或者格网输入的先例**
