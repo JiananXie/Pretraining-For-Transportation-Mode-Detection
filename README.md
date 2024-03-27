@@ -24,12 +24,11 @@ created for usage of project
   - 2024.3.25 读文章:`Semi-Supervised Deep Learning Approach for Transportation Mode Identification Using GPS Trajectory Data(2019)`、`Leveraging the Self-Transition Probability of Ordinal Patterns Transition Network for Transportation Mode Identification Based on GPS Data(2022)`。
     - **缺少change point检测，之前没有考虑过实际检测轨迹mode时，大多数情况是多mode的，项目仅简单的在预知change point(从标好的数据集中分割)情况下进行了TMD任务的学习**
   - 2024.3.26 读文章:`Trajectory as a Sequence: A novel travel mode identification framework(2023)`, `DeepStay: Stay Region Extraction from Location Trajectories using
-Weak Supervision(2023)`,`A novel one-stage approach for pointwise transportation mode identification inspired by point cloud processing(2023)`, `An Ensemble of ConvTransformer Networks for the
-Sussex-Huawei Locomotion-Transportation (SHL) Recognition
-Challenge(2021)`
-      - **1.TMI领域最新两篇利用了transformer的：`A deep learning approach for transportation mode identification using a transformation of GPS trajectory data features into an image representation(2024 preprint)`,`DeepStay: Stay Region Extraction from Location Trajectories using Weak Supervision(2023)`**
-      - **2.发表的文章中目前能找到开源还没实现的有`A novel one-stage approach for pointwise transportation mode identification inspired by point cloud processing(2023)`**
-      - **3.如何处理分段问题？工作聚焦于对给定segment分类？(一段取众数？自动分割不同mode？)**
-      - **4.SHL和GL的处理暂时不同**
-      - **5.是否可以利用半监督？如果仅聚焦于trm encoder比CAE/CE学习表征的能力更强，从而利用大量的未标记数据**
-      - **6.输入只利用格网编号？H3？还是Cov-transformer？还是只利用speed？**
+Weak Supervision(2023)`, `An Ensemble of ConvTransformer Networks for the Sussex-Huawei Locomotion-Transportation (SHL) Recognition Challenge(2021)`
+    - **1.TMI领域最新两篇利用了transformer的：`A deep learning approach for transportation mode identification using a transformation of GPS trajectory data features into an image representation(2024 preprint)`,`DeepStay: Stay Region Extraction from Location Trajectories using Weak Supervision(2023)`**
+    - **2.发表的文章中目前能找到开源还没实现的有`A novel one-stage approach for pointwise transportation mode identification inspired by point cloud processing(2023)`**
+    - **3.如何处理分段问题？工作聚焦于对给定segment分类？(一段取众数？自动分割不同mode？)**
+    - **4.SHL和GL的处理暂时不同**
+    - **5.是否可以利用半监督？如果仅聚焦于trm encoder比CAE/CE学习表征的能力更强，从而利用大量的未标记数据**
+    - **6.输入只利用格网编号？H3？还是Cov-transformer？还是只利用speed？**
+  - 2024.3.27 读文章：`A novel one-stage approach for pointwise transportation mode identification inspired by point cloud processing(2023)`，成功跑通`Dabiri et al.(2019)`的所有方法，回答：为什么一般工作都采用motion features，而不是直接用gps数据？
