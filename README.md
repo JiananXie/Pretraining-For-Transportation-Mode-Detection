@@ -33,4 +33,7 @@ Weak Supervision(2023)`, `An Ensemble of ConvTransformer Networks for the Sussex
     - **6.输入只利用格网编号？H3？还是Cov-transformer？还是只利用speed？**
   - 2024.3.27 读文章：`A novel one-stage approach for pointwise transportation mode identification inspired by point cloud processing(2023)`，成功跑通`Dabiri et al.(2019)`的所有方法，重新整理了一遍格网预处理部分，发现以前的代码有问题，现改为大圆等距分割。回答：为什么一般工作都采用motion features，而不是直接用gps数据？**08年geolife作者只讲了对于raw gps data，利用机器学习方法去做检测，而第一步的feature extraction我们采用了.....等特征，并没有阐述清楚为什么不直接用gps数据**
     -  **再寻找相关领域是否有直接利用gps数据或者格网输入的先例**
-  - 2024.3.28 修改后格网编号太大，目前效果很差，但反而利用speed单个特征能做到最好的表现，后面需要研究原因，词表无法利用还是speed分词后较短，能比较好学习到。
+  - 2024.3.28 修改后格网编号太大，目前效果很差，但反而利用speed单个特征能做到最好的表现，后面需要研究原因，词表无法利用还是speed分词后较短，能比较好学习到。(speed下，npreBert是0.71，preBert是0.79)
+    - 保留两位speed是否有提升？(**没有提升**)
+    - 如果是编号太大导致分词过多的问题，缩小点数(Kim 2022的工作就只取了40个点而已)
+    - 在得到预期效果的模型后，可以利用bertviz探寻attention机制
