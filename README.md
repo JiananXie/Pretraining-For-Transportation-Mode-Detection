@@ -40,3 +40,4 @@ Weak Supervision(2023)`, `An Ensemble of ConvTransformer Networks for the Sussex
   - 2024.3.29 与曾学长交流后，可视化数据集得出结论，轨迹十分较为稀疏，且精确度也不够，直接利用raw gps data很困难，所有工作都是对gps数据提取简单运动特征后交给深度学习方法或者是通过复杂的预处理过程提取高维表征特征再扔给简单的机器学习方法。所以可以理论上只用speed序列做工作，但需要阐述清楚为什么只用这个。阅读：`STPC-Net_Learn_Massive_Geo-Sensory_Data_as_Spatio-Temporal_Point_Clouds`,`A multi-stage fusion network for transportation mode identification with varied scale representation of GPS trajectories`
     - **后续工作：1.完善实验(Dabiri baseline存在问题重新跑)。2.改写文章。3.可视化轨迹并详细地补充文章。4.利用bertviz探寻是否加载语料预训练参数的效果。**
   - 2024.3.30 改写abstract和introduction
+  - 2024.3.31 改写abstract和introduction，并继续尝试grid
