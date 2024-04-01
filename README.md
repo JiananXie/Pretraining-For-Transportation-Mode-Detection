@@ -41,3 +41,4 @@ Weak Supervision(2023)`, `An Ensemble of ConvTransformer Networks for the Sussex
     - **后续工作：1.完善实验(Dabiri baseline存在问题重新跑)。2.改写文章。3.可视化轨迹并详细地补充文章。4.利用bertviz探寻是否加载语料预训练参数的效果。**
   - 2024.3.30 改写abstract和introduction
   - 2024.3.31 改写abstract和introduction，并继续尝试grid
+  - 2024.4.1 整理数据，补充实验：grid到底行不行，两个特征序列一起训练行不行？
