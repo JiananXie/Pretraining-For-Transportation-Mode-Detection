@@ -44,3 +44,4 @@ Weak Supervision(2023)`, `An Ensemble of ConvTransformer Networks for the Sussex
   - 2024.4.1 整理数据，补充实验：grid到底行不行，两个特征序列一起训练行不行？(**可以**)
   - 2024.4.2 整理数据，补充实验：grid细分到0.5m每个格子可以做到较好准确率，目前最好效果是grid+speed
   - 2024.4.3 整理数据，补充实验：grid细分到0.1达到最好效果且较为合理。
+  - 2024.4.4 grid细分到0.05时效果下降，认为0.1是最好效果，并补充实验。
