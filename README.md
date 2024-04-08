@@ -47,3 +47,5 @@ Weak Supervision(2023)`, `An Ensemble of ConvTransformer Networks for the Sussex
   - 2024.4.4 grid细分到0.05时效果下降，认为0.1是最好效果，并补充实验。
   - 2024.4.5 补充实验：13237：I+A，13258：I+V，13259：I+J
   - 2024.4.6 补充实验：13259：I+J，13265：V+A，13281：V+J
+  - 2024.4.7 补充实验，改写related work
+  - 2024.4.8 补充实验，改写preliminary
